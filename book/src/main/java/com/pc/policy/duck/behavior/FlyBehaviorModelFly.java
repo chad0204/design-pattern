@@ -1,4 +1,4 @@
-package com.pc.strategy.duck.behavior;
+package com.pc.policy.duck.behavior;
 
 public class FlyBehaviorModelFly implements FlyBehavior {
     public void fly() {

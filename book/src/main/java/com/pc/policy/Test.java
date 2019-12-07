@@ -1,9 +1,8 @@
-package com.pc.strategy;
+package com.pc.policy;
 
-import com.pc.strategy.duck.Duck;
-import com.pc.strategy.duck.ModelDuck;
-import com.pc.strategy.duck.behavior.FlyBehaviorModelFly;
-import com.pc.strategy.duck.behavior.FlyBehaviorNoFly;
+import com.pc.policy.duck.Duck;
+import com.pc.policy.duck.ModelDuck;
+import com.pc.policy.duck.behavior.FlyBehaviorNoFly;
 
 /**
  * 使用继承，不能解决有些子类不需要某方法的问题，比如橡皮鸭不会飞。
@@ -14,8 +13,8 @@ public class Test {
     public static void main(String[] args) {
 
         Duck duck = new ModelDuck();
-        duck.setFlyBehavior(new FlyBehaviorModelFly());
-//        duck.setFlyBehavior(new FlyBehaviorNoFly());
+//        duck.setFlyBehavior(new FlyBehaviorModelFly());
+        duck.setFlyBehavior(new FlyBehaviorNoFly());
         duck.fly();
 
 

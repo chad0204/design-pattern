@@ -1,6 +1,6 @@
-package com.pc.strategy.duck;
+package com.pc.policy.duck;
 
-import com.pc.strategy.duck.behavior.FlyBehavior;
+import com.pc.policy.duck.behavior.FlyBehavior;
 
 
 public abstract class Duck {
