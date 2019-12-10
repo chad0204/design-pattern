@@ -3,7 +3,7 @@ package com.pc.singleton;
 /**
  * @author dx
  * @className Singleton
- * @description TODO
+ * @description 双重检查
  * @date 2019-08-04 17:05
  */
 public class Singleton {
