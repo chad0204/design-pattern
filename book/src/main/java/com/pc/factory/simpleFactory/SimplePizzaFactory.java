@@ -26,7 +26,7 @@ class VeggiePizza extends Pizza {
 
     @Override
     public void prepare() {
-
+        System.out.println("VeggiePizza prepare");
     }
 
 }
@@ -35,7 +35,7 @@ class ChessPizza extends Pizza {
 
     @Override
     public void prepare() {
-
+        System.out.println("ChessPizza prepare");
     }
 
 

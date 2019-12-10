@@ -21,7 +21,7 @@ public abstract class PizzaStore {
         return pizza;
     }
 
-    //子商店类实现,这就是工厂方法，工厂方法就相当于一个工厂
+    //子商店类实现,这就是工厂方法，将类的初始化延迟到子类，工厂方法就相当于一个工厂
     protected abstract Pizza createPizza(String type);
 
 

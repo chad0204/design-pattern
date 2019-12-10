@@ -15,7 +15,7 @@ public abstract class Pizza {
 
     public abstract void prepare();//准备
 
-    public void bake() {};//烘烤
+    public void bake() {}//烘烤
 
     public void cut() {};//切块
 

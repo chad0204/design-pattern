@@ -7,7 +7,10 @@ import com.pc.factory.factoryMethod.pizzaStore.PizzaStore;
 /**
  * @author dx
  * @className Main
- * @description TODO
+ * @description 抽象工厂
+ *     抽象工厂，提供一组工厂方法
+ *
+ *
  * @date 2019-08-03 14:54
  */
 public class Main {
