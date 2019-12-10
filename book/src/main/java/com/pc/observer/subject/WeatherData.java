@@ -10,9 +10,9 @@ import java.util.ArrayList;
  */
 public class WeatherData implements Subject {
 
-    private float temp;
-    private float humi;
-    private float pres;
+    private float temp;//温度
+    private float humi;//湿度
+    private float pres;//气压
 
     //观察者容器
     private ArrayList observers;
@@ -37,10 +37,11 @@ public class WeatherData implements Subject {
      * 推的方式
      */
     public void notifyObservers() {
+        //遍历所有注册过的观察者，推送过去
         observers.forEach(observer -> ((Observer)observer).update(temp,humi,pres));
     }
 
-    public void measurementsChanged() {
+    private void measurementsChanged() {
         notifyObservers();
     }
 
