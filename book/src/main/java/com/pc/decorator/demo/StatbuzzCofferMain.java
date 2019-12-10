@@ -11,10 +11,18 @@ package com.pc.decorator.demo;
  *
  *      Espresso,HouseBlend     Mocha,Soy,Whip         Tall,Grande,Venti
  *
+ *
+ *      装饰者和代理的区别：装饰者和被装饰者实现相同的接口，并持有被装饰者的对象引用，对类行为进行改造。而代理是通过
+ *      生成一个代理对象，来控制对实际对象的访问，有时候代理和被代理是不需要实现相同接口的，如远程代理，动态代理。
+ *
  */
 public class StatbuzzCofferMain {
 
     public static void main(String[] args) {
+
+        //装饰者和被装饰者必须是同一类型,同时装饰着维护一个被装饰者对象
+
+
         Beverage beverage = new Espresso();//定一杯蒸馏咖啡，不需要调料
         System.out.println(beverage.getDescription()+" $"+beverage.cost());
 
