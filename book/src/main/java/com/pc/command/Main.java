@@ -10,7 +10,7 @@ import com.pc.command.tool.Light;
 /**
  * @author dx
  * @className Main
- * @description TODO
+ * @description 插槽遥控器
  * @date 2019-08-11 16:43
  */
 public class Main {
