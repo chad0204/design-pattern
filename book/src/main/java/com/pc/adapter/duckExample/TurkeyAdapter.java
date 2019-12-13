@@ -4,6 +4,8 @@ package com.pc.adapter.duckExample;
  * @author dx
  * @className TurkeyAdapter
  * @description 火鸡适配器
+ *
+ *      火鸡并没有鸭子的方法，但通过火鸡适配器，火鸡看起来就像一只鸭子
  * @date 2019-08-13 14:20
  */
 public class TurkeyAdapter implements Duck {
