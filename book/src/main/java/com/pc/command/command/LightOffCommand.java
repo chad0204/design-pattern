@@ -1,11 +1,11 @@
-package com.pc.command;
+package com.pc.command.command;
 
 import com.pc.command.tool.Light;
 
 /**
  * @author dx
  * @className LightCommand
- * @description TODO
+ * @description 关灯
  * @date 2019-08-11 16:38
  */
 public class LightOffCommand implements Command {

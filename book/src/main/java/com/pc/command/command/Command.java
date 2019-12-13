@@ -1,4 +1,4 @@
-package com.pc.command;
+package com.pc.command.command;
 
 public interface Command {
 

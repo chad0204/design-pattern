@@ -1,9 +1,11 @@
-package com.pc.command;
+package com.pc.command.control;
+
+import com.pc.command.command.Command;
 
 /**
  * @author dx
  * @className SimpleRemoteControl
- * @description TODO
+ * @description 遥控器
  * @date 2019-08-11 16:41
  */
 public class SimpleRemoteControl {

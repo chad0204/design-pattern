@@ -1,9 +1,12 @@
-package com.pc.command;
+package com.pc.command.control;
+
+import com.pc.command.command.Command;
+import com.pc.command.command.NoCommand;
 
 /**
  * @author dx
  * @className RemoteControl
- * @description TODO
+ * @description 遥控器
  * @date 2019-08-11 17:36
  */
 public class RemoteControl {

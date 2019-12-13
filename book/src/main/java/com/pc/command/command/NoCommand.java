@@ -1,9 +1,9 @@
-package com.pc.command;
+package com.pc.command.command;
 
 /**
  * @author dx
  * @className NoCommand
- * @description TODO
+ * @description 空命令
  * @date 2019-08-11 17:35
  */
 public class NoCommand implements Command {

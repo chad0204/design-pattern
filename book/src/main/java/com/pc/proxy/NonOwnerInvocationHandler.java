@@ -7,8 +7,10 @@ import java.lang.reflect.Method;
 /**
  * @author dx
  * @className OwnerInvocationHandler
- * @description TODO
+ * @description 别人，这个代理后的对象可以打分和查询，不可以填写信息
  * @date 2019-08-16 11:21
+ *
+ *
  */
 public class NonOwnerInvocationHandler implements InvocationHandler {
 

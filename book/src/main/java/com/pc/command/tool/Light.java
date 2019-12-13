@@ -3,7 +3,7 @@ package com.pc.command.tool;
 /**
  * @author dx
  * @className Light
- * @description TODO
+ * @description 电灯
  * @date 2019-08-11 16:38
  */
 public class Light {

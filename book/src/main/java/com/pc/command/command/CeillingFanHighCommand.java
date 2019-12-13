@@ -1,26 +1,26 @@
-package com.pc.command;
+package com.pc.command.command;
 
 import com.pc.command.tool.CeilingFan;
 
 /**
  * @author dx
  * @className GarageDoorCloseCommand
- * @description 风扇关闭命令
+ * @description 风扇调高命令
  * @date 2019-08-11 17:34
  */
-public class CeillingFanOffCommand implements Command {
+public class CeillingFanHighCommand implements Command {
 
     CeilingFan ceillingFan;
     int prevSpeed;//用于记录上一次状态
 
-    public CeillingFanOffCommand(CeilingFan ceillingFan) {
+    public CeillingFanHighCommand(CeilingFan ceillingFan) {
         this.ceillingFan = ceillingFan;
     }
 
     @Override
     public void execute() {
         prevSpeed = ceillingFan.getSpeed();
-        ceillingFan.off();
+        ceillingFan.high();
     }
 
     @Override
@@ -36,7 +36,7 @@ public class CeillingFanOffCommand implements Command {
                 ceillingFan.low();
                 break;
             case CeilingFan.OFF:
-                ceillingFan.low();
+                ceillingFan.off();
                 break;
         }
     }

@@ -1,11 +1,11 @@
-package com.pc.command;
+package com.pc.command.command;
 
 import com.pc.command.tool.Garage;
 
 /**
  * @author dx
  * @className GarageDoorCloseCommand
- * @description TODO
+ * @description 关门命令
  * @date 2019-08-11 17:34
  */
 public class GarageDoorCloseCommand implements Command {
