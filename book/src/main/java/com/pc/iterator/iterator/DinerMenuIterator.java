@@ -4,7 +4,7 @@ import java.util.Iterator;
 /**
  * @author dx
  * @className DinerMenuIterator
- * @description TODO
+ * @description 使用java自带的迭代器接口
  * @date 2019-08-13 20:06
  */
 public class DinerMenuIterator implements Iterator<MenuItem> {

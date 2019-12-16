@@ -6,7 +6,7 @@ import java.util.Iterator;
 /**
  * @author dx
  * @className CafeMenu
- * @description TODO
+ * @description 咖啡菜单-map
  * @date 2019-08-14 14:19
  */
 public class CafeMenu implements Menu {

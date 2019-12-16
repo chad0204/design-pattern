@@ -6,7 +6,7 @@ import java.util.Iterator;
 /**
  * @author dx
  * @className DinerMenuIterator
- * @description TODO
+ * @description 使用自定义迭代器接口
  * @date 2019-08-13 20:06
  */
 @Deprecated

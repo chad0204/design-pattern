@@ -3,7 +3,7 @@ package com.pc.iterator.component;
 /**
  * @author dx
  * @className Main
- * @description TODO
+ * @description 组合模式
  * @date 2019-08-14 17:17
  */
 public class Main {

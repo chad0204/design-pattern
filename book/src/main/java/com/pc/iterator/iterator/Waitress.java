@@ -4,7 +4,7 @@ import java.util.Iterator;
 /**
  * @author dx
  * @className Waitress
- * @description TODO
+ * @description 服务员
  * @date 2019-08-13 20:24
  */
 public class Waitress {

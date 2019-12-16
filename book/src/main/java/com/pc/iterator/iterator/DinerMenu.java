@@ -4,7 +4,7 @@ import java.util.Iterator;
 /**
  * @author dx
  * @className DinerMenu
- * @description 餐厅晚饭菜单
+ * @description 餐厅晚饭菜单-数组
  * @date 2019-08-13 19:56
  */
 public class DinerMenu implements Menu {

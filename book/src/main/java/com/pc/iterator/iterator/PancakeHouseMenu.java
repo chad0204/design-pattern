@@ -7,7 +7,7 @@ import java.util.Iterator;
 /**
  * @author dx
  * @className PancakeHouseMenu
- * @description 煎饼屋菜单
+ * @description 煎饼屋菜单-list
  * @date 2019-08-13 19:47
  */
 public class PancakeHouseMenu implements Menu {
