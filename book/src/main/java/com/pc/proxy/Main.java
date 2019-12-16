@@ -6,6 +6,16 @@ import java.lang.reflect.Proxy;
  * @author dx
  * @className Main
  * @description 一个打分程序，自己可以填写信息，别人可以打分，相当于权限控制。为对象生成一个代理对象，通过代理对象控制对象的操作权限。
+ *
+ *
+ *
+ *
+ * 装饰者和代理的区别：
+ *      装饰者模式和被装饰者实现相同的接口，装饰者持有被装饰者的引用，改造类的行为。
+ *      而代理模式通过生成一个代理对象，来控制对实际对象的访问，并不需要相同类型，
+ *      如动态代理和远程代理。装饰者可以看成是静态代理，主要还是意图不一样，一个针
+ *      对行为，一个控制对象。
+ *
  * @date 2019-08-16 13:51
  *
  *
@@ -27,6 +37,7 @@ public class Main {
 
 
         PersonBean lufei = new PersonBeanImpl("路飞","男","聚会");
+
 
         //自己
         PersonBean ownerProxy = getOwnerProxy(lufei);
