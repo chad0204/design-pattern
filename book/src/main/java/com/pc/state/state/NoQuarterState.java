@@ -1,9 +1,11 @@
-package com.pc.state;
+package com.pc.state.state;
+
+import com.pc.state.GumballMachine;
 
 /**
  * @author dx
  * @className NoQuarterState
- * @description TODO
+ * @description 未投币
  * @date 2019-08-15 11:09
  */
 public class NoQuarterState implements State {

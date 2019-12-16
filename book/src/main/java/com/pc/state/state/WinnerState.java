@@ -1,9 +1,11 @@
-package com.pc.state;
+package com.pc.state.state;
+
+import com.pc.state.GumballMachine;
 
 /**
  * @author dx
  * @className WinnerState
- * @description TODO
+ * @description 双倍爆炸
  * @date 2019-08-15 14:24
  */
 public class WinnerState implements State {

@@ -1,18 +1,20 @@
 package com.pc.state;
 
+import com.pc.state.state.*;
+
 /**
  * @author dx
  * @className GumballMachine
- * @description
+ * @description 扭蛋器
  * @date 2019-08-15 11:11
  */
 public class GumballMachine {
 
-    private State soldOutState;
-    private State noQuarterState;
-    private State hasQuarterState;
-    private State soldState;
-    private State winnerState;
+    private State soldOutState;//售空
+    private State noQuarterState;//未投币
+    private State hasQuarterState;//有币
+    private State soldState;//出货
+    private State winnerState;//赢家
 
 
 
@@ -46,11 +48,11 @@ public class GumballMachine {
         state.dispense();
     }
 
-    void setState(State state) {
+    public void setState(State state) {
         this.state = state;
     }
 
-    void releaseBall() {
+    public void releaseBall() {
         System.out.println("a gumball comes rolling out the slot...");
         if(count != 0) {
             count--;

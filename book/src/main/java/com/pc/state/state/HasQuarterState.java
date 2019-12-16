@@ -1,11 +1,12 @@
-package com.pc.state;
+package com.pc.state.state;
 
+import com.pc.state.GumballMachine;
 import java.util.Random;
 
 /**
  * @author dx
  * @className HasQuarterState
- * @description TODO
+ * @description 投币状态
  * @date 2019-08-15 11:16
  */
 public class HasQuarterState implements State {

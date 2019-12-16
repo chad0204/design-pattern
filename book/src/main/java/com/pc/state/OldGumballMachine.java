@@ -8,13 +8,13 @@ package com.pc.state;
  */
 public class OldGumballMachine {
 
-    private final static int SOLD_OUT = 0;
-    private final static int NO_QUARTER = 1;
-    private final static int HAS_QUARTER = 2;
+    private final static int SOLD_OUT = 0;//售空
+    private final static int NO_QUARTER = 1;//未投币
+    private final static int HAS_QUARTER = 2;//投币
     private final static int SOLD = 3;
 
     int state = SOLD_OUT;//默认状态为售磬
-    private int count;//数量
+    private int count;//物品数量
 
     public OldGumballMachine(int count) {
         this.count = count;

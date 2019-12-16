@@ -1,9 +1,11 @@
-package com.pc.state;
+package com.pc.state.state;
+
+import com.pc.state.GumballMachine;
 
 /**
  * @author dx
  * @className SoldState
- * @description TODO
+ * @description 售卖
  * @date 2019-08-15 11:16
  */
 public class SoldState implements State {
