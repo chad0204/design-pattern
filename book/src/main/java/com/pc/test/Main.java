@@ -1,5 +1,6 @@
 package com.pc.test;
 
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -43,7 +44,10 @@ public class Main {
         });
 
 
+        DecimalFormat df = new DecimalFormat("#.00");
+        Double d = Double.valueOf(df.format(1000));
 
+        System.out.println();
 
 
     }
