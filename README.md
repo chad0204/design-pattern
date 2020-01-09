@@ -141,6 +141,34 @@ jdk中的适配器，新的Collection为了兼容老的Collection，EnumerationI
 策略模式也是封装算法，它用组合的方式，封装完整的算法，而模版方法只封装算法结构，使用子类具体实现算法中的某些步骤。都是封装算法，一个是完整算法一个是算法大纲。
 
 
+举例：HashMap，LinkedHashMap，LinkedHashMap子类
+HashMap:
+
+final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+                   boolean evict) {
+    doSomethingElse;
+    afterNodeInsertion(evict);               
+    return null;               
+}
+
+void afterNodeInsertion(boolean evict) { }//空实现，将被子类重写，处理方式由子类决定
+
+
+LinkedHashMap:
+void afterNodeInsertion(boolean evict) { 
+    doSomethingElse;
+    removeEldestEntry(first);
+}
+
+protected boolean removeEldestEntry(Map.Entry<K,V> eldest) {//空实现，将被子类重写，提供不同的过期清除方式
+    return false;
+}
+
+
+这里的putVal和afterNodeInsertion都是模板方法。
+
+
+
 # 九.迭代器与组合模式
 
 不同的集合，提供相同的迭代方式，隐藏了集合的具体实现方式。
