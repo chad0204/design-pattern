@@ -15,10 +15,10 @@ public class WeatherData implements Subject {
     private float pres;//气压
 
     //观察者容器
-    private ArrayList observers;
+    private ArrayList<Observer> observers;
 
     public WeatherData() {
-        observers = new ArrayList<Observer>();
+        observers = new ArrayList<>();
     }
 
 
@@ -38,7 +38,7 @@ public class WeatherData implements Subject {
      */
     public void notifyObservers() {
         //遍历所有注册过的观察者，推送过去
-        observers.forEach(observer -> ((Observer)observer).update(temp,humi,pres));
+        observers.forEach(observer -> observer.update(temp,humi,pres));
     }
 
     private void measurementsChanged() {

@@ -7,6 +7,8 @@ package com.pc.command.demo;
  *      命令：定义一系列命令方法，execute,undo,redo等，其实现通过组合接收者，通过命令方法如execute调用接收者方法，委托接收者执行具体业务。
  *      调用者：持有一个命令对象，通过命令对象完成具体的业务逻辑。
  *
+ *      行为请求者（调用者）与行为实现者（接收者）通过command实现了解耦。
+ *
  * @author dongxie
  * @date 17:17 2020-02-07
  */

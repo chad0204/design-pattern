@@ -13,7 +13,8 @@ public class Main {
 
         long time = System.currentTimeMillis();
         for(int i = 0;i<100000000;i++) {
-            Singleton.getInstance();
+            Singleton instance = Singleton.getInstance();
+            instance.hashCode();
         }
         System.out.println(System.currentTimeMillis()-time);
     }

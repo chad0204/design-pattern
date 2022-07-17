@@ -6,10 +6,10 @@ package com.pc.factory.factoryMethod.spring;
  * @author pengchao
  * @since 2022/7/13 15:05
  */
-public abstract class AbstractFactoryBean implements FactoryBean {
+public abstract class AbstractFactoryBean<T> implements FactoryBean<T> {
 
     @Override
-    public Object getObject() {
+    public T getObject() {
         return createInstance();
     }
 
@@ -17,6 +17,6 @@ public abstract class AbstractFactoryBean implements FactoryBean {
      * 这不是关键！
      * @return
      */
-    protected abstract Object createInstance();
+    protected abstract T createInstance();
 
 }
