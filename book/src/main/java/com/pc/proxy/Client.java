@@ -21,12 +21,12 @@ import java.lang.reflect.Proxy;
  *
  *
  */
-public class Main {
+public class Client {
 
 
     public static void main(String[] args) {
 
-        Main main = new Main();
+        Client main = new Client();
 
         main.driver();
 
@@ -52,17 +52,17 @@ public class Main {
         //别人
         PersonBean namei = new PersonBeanImpl("娜美","女","购物");
 
+
         PersonBean nonOwnerProxy = getNonOwnerProxy(namei);
+        //其实可以直接传入属性，不用关心谁被代理了
+        PersonBean nonOwnerProxyV2 = getNonOwnerProxy("娜美","女","购物");
+
 
         nonOwnerProxy.doHotOrNotRating(10);//给别人打分
 
         System.out.println(namei.getHotOrNotRating());
 
         nonOwnerProxy.setInterests("修改别人的兴趣");
-
-
-
-
     }
 
 
@@ -76,6 +76,13 @@ public class Main {
 
     PersonBean getNonOwnerProxy(PersonBean person) {
 
+        return (PersonBean) Proxy.newProxyInstance(person.getClass().getClassLoader(),
+                person.getClass().getInterfaces(),
+                new NonOwnerInvocationHandler(person));
+    }
+
+    PersonBean getNonOwnerProxy(String name, String gender, String interests) {
+        PersonBean person = new PersonBeanImpl("娜美","女","购物");
         return (PersonBean) Proxy.newProxyInstance(person.getClass().getClassLoader(),
                 person.getClass().getInterfaces(),
                 new NonOwnerInvocationHandler(person));
