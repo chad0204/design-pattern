@@ -25,6 +25,8 @@ public class Client {
         signInfo2.operation();
 
 
+        //讲道理应该将内部状态抽出来作为一个内部对象，缓存这些内部对象，被SignInfo引用。否则SignInfo会有线程安全问题
+
         System.out.println(signInfo == signInfo2);
 
     }
