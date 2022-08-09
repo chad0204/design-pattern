@@ -23,6 +23,14 @@ public class CarDirector {
         return benzCarBuilder.setSteps(steps).build();
     }
 
+    public AbstractCarModel getBBenzCar() {
+        this.steps.clear();
+        this.steps.add("alarm");
+        this.steps.add("light");
+        this.steps.add("start");
+        return benzCarBuilder.setSteps(steps).build();
+    }
+
     public AbstractCarModel getABMWCar() {
         this.steps.clear();
         this.steps.add("start");

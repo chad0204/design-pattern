@@ -12,6 +12,8 @@ public class Test {
 
     public static void main(String[] args) {
 
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(1).append(1).toString();
 
         newCreate();
     }
@@ -30,6 +32,7 @@ public class Test {
     public static void newCreate() {
 
         CarDirector carDirector = new CarDirector();
+        //想要什么启动顺序的车，直接给你什么顺序的车
         carDirector.getABenzCar().run();
         carDirector.getABMWCar().run();
 
