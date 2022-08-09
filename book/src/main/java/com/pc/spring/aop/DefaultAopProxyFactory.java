@@ -1,9 +1,9 @@
-package com.pc.proxy.spring.aop;
+package com.pc.spring.aop;
 
-import com.pc.proxy.spring.aop.proxy.AopProxy;
-import com.pc.proxy.spring.aop.proxy.CglibDynamicAopProxy;
-import com.pc.proxy.spring.aop.proxy.JavassistDynamicAopProxy;
-import com.pc.proxy.spring.aop.proxy.JdkDynamicAopProxy;
+import com.pc.spring.aop.proxy.AopProxy;
+import com.pc.spring.aop.proxy.CglibDynamicAopProxy;
+import com.pc.spring.aop.proxy.JavassistDynamicAopProxy;
+import com.pc.spring.aop.proxy.JdkDynamicAopProxy;
 
 /**
  *

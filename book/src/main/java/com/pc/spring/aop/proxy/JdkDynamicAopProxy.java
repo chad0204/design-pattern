@@ -1,6 +1,6 @@
-package com.pc.proxy.spring.aop.proxy;
+package com.pc.spring.aop.proxy;
 
-import com.pc.proxy.spring.aop.ProxyConfig;
+import com.pc.spring.aop.ProxyConfig;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

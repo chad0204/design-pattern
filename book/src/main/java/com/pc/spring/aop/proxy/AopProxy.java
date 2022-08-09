@@ -1,4 +1,4 @@
-package com.pc.proxy.spring.aop.proxy;
+package com.pc.spring.aop.proxy;
 
 /**
  *

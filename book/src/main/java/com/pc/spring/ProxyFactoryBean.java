@@ -1,8 +1,8 @@
-package com.pc.proxy.spring;
+package com.pc.spring;
 
-import com.pc.proxy.spring.aop.AopProxyFactory;
-import com.pc.proxy.spring.aop.ProxyConfig;
-import com.pc.proxy.spring.aop.proxy.AopProxy;
+import com.pc.spring.aop.AopProxyFactory;
+import com.pc.spring.aop.ProxyConfig;
+import com.pc.spring.aop.proxy.AopProxy;
 
 /**
  *

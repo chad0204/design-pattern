@@ -1,6 +1,4 @@
-package com.pc.proxy.spring.aop;
-
-import java.lang.annotation.Target;
+package com.pc.spring.aop;
 
 /**
  * 代理配置
