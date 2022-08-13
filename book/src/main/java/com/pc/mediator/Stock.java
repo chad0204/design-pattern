@@ -1,21 +1,25 @@
 package com.pc.mediator;
 
+import lombok.Data;
+
 /**
  * 库存
  *
  * @author pengchao
  * @since 2022/8/11 18:57
  */
-public class Stock {
+@Data
+public class Stock extends Colleague {
     //库存
     private int capacity = 100;
-    private Sale sale;
-    private Purchase purchase;
+//    private Sale sale;
+//    private Purchase purchase;
 
-    public Stock(Sale sale, Purchase purchase) {
-        this.sale = sale;
-        this.purchase = purchase;
+    public Stock(AbstractMediator mediator) {
+        super(mediator);
     }
+
+
 
     public void increment(int num) {
         this.capacity += num;
@@ -28,11 +32,6 @@ public class Stock {
     }
 
     public void clearStock() {
-        purchase.stopBuy();
-        sale.offSale();
-    }
-
-    public int getCapacity() {
-        return capacity;
+        super.mediator.execute("stock.clearStock");
     }
 }

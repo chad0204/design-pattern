@@ -9,30 +9,26 @@ import lombok.Data;
  * @since 2022/8/11 18:57
  */
 @Data
-public class Sale {
+public class Sale extends Colleague {
 
     private int saleStatus;//销售情况
 
-    private Stock stock;
-    private Purchase purchase;
+//    private Stock stock;
+//    private Purchase purchase;
 
-    public Sale(Stock stock, Purchase purchase) {
-        this.stock = stock;
-        this.purchase = purchase;
+    public Sale(AbstractMediator mediator) {
+        super(mediator);
     }
+
 
     public void sell(int num) {
-        int capacity = stock.getCapacity();
-
-        //库存不够，得让采购进货
-        purchase.buy(num - capacity);
-
+        super.mediator.execute("sale.sell");
     }
-
 
 
     public void offSale() {
         //有多少卖多少
-        int capacity = stock.getCapacity();
+        super.mediator.execute("stock.offSale");
+
     }
 }
