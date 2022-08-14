@@ -31,7 +31,8 @@ public class Client {
         Purchase purchase = new Purchase(mediator);
         Sale sale = new Sale(mediator);
         Stock stock = new Stock(mediator);
-        mediator.execute("purchase.buy");
+
+        purchase.buy(10);
 
 
     }
