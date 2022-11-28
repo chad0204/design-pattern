@@ -1,5 +1,7 @@
 package com.pc.singleton;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author dx
  * @className Singleton
@@ -15,23 +17,31 @@ public class Singleton {
     private Long id;
     private String name;
 
-    private Singleton() {}
-
+    private Singleton() {
+        //模拟初始化时间
+//        try {
+//            TimeUnit.MILLISECONDS.sleep(1);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+    }
 
     //加synchronized可以防止多线程情况下创建了多个实例，但同步会损耗性能，并且锁只在第一次实例化
     //时起到作用，实例创建完成后锁就变成了累赘。
     public static Singleton getInstance() {
-        if (singleton == null) {
+//        if (singleton == null) {
             synchronized (Singleton.class) {
                 if(singleton == null) {
                     singleton = new Singleton();
                 }
             }
-        }
+//        }
         return singleton;
     }
 
-
+    public static void clear() {
+        singleton = null;
+    }
 
 
 }
