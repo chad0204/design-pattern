@@ -16,8 +16,18 @@ public class Test {
 
         LinkedHashMap<String, String> hashMap = (LinkedHashMap<String, String>) new HashMap<String, String>();
 
-
         test();
+
+        ChildA childA = new ChildA();
+        Father father = new Father();
+
+
+        //不能把爹赋值给儿子
+        getC(childA);
+        getC((ChildA) father);
+
+        getF(childA);
+        getF(father);
 
     }
 
@@ -41,14 +51,26 @@ public class Test {
         //这个儿子比爹大，不能转成爹
 //        List<String> valeB = childB.getVale();
     }
+
+
+    public static void getC(ChildA childA) {
+
+    }
+
+    public static void getF(Father father) {
+
+    }
 }
 
 class Father {
-    void doSomething(HashMap map) {
+
+    public void test() {}
+
+    public void doSomething(HashMap map) {
         System.out.println("爸爸的参数是hashMap");
     }
 
-    List<String> getValue() {
+    public List<String> getValue() {
         System.out.println("爸爸返回值是list");
         return new ArrayList<>();
     }
@@ -61,12 +83,16 @@ class Father {
  */
 class ChildA extends Father {
 
-    void doSomething(Map map) {
+    public void test() {
+        super.test();
+    }
+
+    public void doSomething(Map map) {
         System.out.println("儿子A的参数是Map, 依然是爸爸干 ,符合里氏替换");
     }
 
 
-    LinkedList<String> getVale() {
+    public LinkedList<String> getVale() {
         System.out.println("儿子A的返回值是LinkedList，可以转成爹的返回值，符合里氏替换");
         return new LinkedList<>();
     }
@@ -75,12 +101,12 @@ class ChildA extends Father {
 
 class ChildB extends Father {
 
-    void doSomething(LinkedHashMap map) {
+    public void doSomething(LinkedHashMap map) {
         System.out.println("儿子B的参数是LinkedHashMap，这里没有爸爸干，不符合里氏替换");
     }
 
 
-    Collection<String> getVale() {
+    public Collection<String> getVale() {
         System.out.println("儿子B的返回值是Collection，这个返回结果，爸爸用不了，不符合里氏替换");
         return new ArrayList<>();
     }

@@ -12,6 +12,8 @@ public class Mediator extends AbstractMediator {
             this.buy((Integer)objects[0]);
         } else if (biz.equals("sale.sell")) {
             this.sell((Integer)objects[0]);
+        } else if (biz.equals("stock.clearStock")) {
+            this.clearStock();
         }
     }
 
