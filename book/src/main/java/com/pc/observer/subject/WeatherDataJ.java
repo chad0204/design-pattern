@@ -13,8 +13,10 @@ public class WeatherDataJ extends Observable {
 
 
     public void measurementsChanged() {
-        setChanged();//设置可用
-        notifyObservers();//只推送主题对象，供观察者拉取
+        //设置可用
+        setChanged();
+        //遍历观察者，调用观察者update.
+        notifyObservers();//只推送主题对象，供观察者拉取。
 //        notifyObservers(this);//推送主题对象，同时推送数据（这里的数据被封装在主题中，其实一样）
     }
 

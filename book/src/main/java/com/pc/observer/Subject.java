@@ -1,13 +1,29 @@
 package com.pc.observer;
 
+import java.util.ArrayList;
+
 /**
  * 主题接口
  */
-public interface Subject {
+public abstract class Subject {
 
-    void registerObserver(Observer observer);
+    //观察者容器
+    protected ArrayList<Observer> observers;
 
-    void removeObserver(Observer observer);
+    public Subject() {
+        observers = new ArrayList<>();
+    }
 
-    void notifyObservers();
+    public void registerObserver(Observer o) {
+        observers.add(o);
+    }
+
+    public void removeObserver(Observer o) {
+        int i;
+        if(( i= observers.indexOf(o))>=0) {
+            observers.remove(i);
+        }
+    }
+
+    public abstract void notifyObservers();
 }
