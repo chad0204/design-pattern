@@ -20,6 +20,10 @@ public abstract class AbstractBeanFactory implements BeanFactory {
         return getObject();
     }
 
+    /**
+     * 具体的初始化逻辑由不同的工厂子类实现
+     * @return
+     */
     protected abstract Object getObject();
 
 }
