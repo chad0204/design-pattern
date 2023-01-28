@@ -22,6 +22,10 @@ public class Test {
         Father father = new Father();
 
 
+        father = childA;
+        childA = (ChildA) father;
+
+
         //不能把爹赋值给儿子
         getC(childA);
         getC((ChildA) father);
