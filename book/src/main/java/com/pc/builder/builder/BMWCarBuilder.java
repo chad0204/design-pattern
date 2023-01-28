@@ -1,4 +1,7 @@
-package com.pc.builder;
+package com.pc.builder.builder;
+
+import com.pc.builder.AbstractCarModel;
+import com.pc.builder.BMWCarModel;
 
 import java.util.List;
 
@@ -12,13 +15,13 @@ public class BMWCarBuilder extends CarBuilder {
     private final BMWCarModel bmwCarModel = new BMWCarModel();
 
     @Override
-    protected CarBuilder setSteps(List<String> steps) {
+    public CarBuilder setSteps(List<String> steps) {
         this.bmwCarModel.setSteps(steps);
         return this;
     }
 
     @Override
-    protected AbstractCarModel build() {
+    public AbstractCarModel build() {
         return this.bmwCarModel;
     }
 }

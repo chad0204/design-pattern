@@ -1,4 +1,6 @@
-package com.pc.builder;
+package com.pc.builder.builder;
+
+import com.pc.builder.AbstractCarModel;
 
 import java.util.List;
 
@@ -11,6 +13,6 @@ public abstract class CarBuilder {
 
     protected abstract CarBuilder setSteps(List<String> steps);
 
-    protected abstract AbstractCarModel build();
+    public abstract AbstractCarModel build();
 
 }

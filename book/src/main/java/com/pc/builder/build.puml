@@ -1,4 +1,0 @@
-@startuml
-CarDirector o--> CarBuilder : 聚合
-CarBuilder --o Car
-@enduml

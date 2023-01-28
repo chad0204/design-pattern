@@ -39,4 +39,9 @@ public class Horse {
         }
     }
 
+    public static void main(String[] args) {
+        Horse horse1 = Horse.builder().diBan("大理石").jiaDian("冰箱").build();
+        Horse horse2 = Horse.builder().jiaDian("冰箱").build();
+    }
+
 }
