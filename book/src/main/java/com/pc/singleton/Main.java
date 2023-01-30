@@ -20,13 +20,13 @@ public class Main {
 
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-//        checkAndGet();
-        readCnt(1000000000L);
+        checkAndGet();
+//        readCnt(1000000000L);
     }
 
-    //测试count次初始化, 判断是否出现非单例的清空
+    //测试count次初始化, 判断是否出现非单例的情况
     public static void checkAndGet() throws ExecutionException, InterruptedException {
-        int count = 100000;
+        int count = 10000000;
         for (int i = 0; i < count; i++) {
             Future<SingletonV2> future1 = executor.submit(SingletonV2::getInstance);
             Future<SingletonV2> future2 = executor.submit(SingletonV2::getInstance);
