@@ -1,4 +1,6 @@
-package com.pc.decorator.demo;
+package com.pc.decorator.demo.condimentdecorator;
+
+import com.pc.decorator.demo.Beverage;
 
 /**
  * @author dx
@@ -8,7 +10,6 @@ package com.pc.decorator.demo;
  */
 public class Mocha extends CondimentDecorator {
 
-    private Beverage beverage;
 
     public Mocha(Beverage beverage) {
         this.beverage = beverage;

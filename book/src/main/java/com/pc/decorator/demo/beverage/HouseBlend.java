@@ -1,4 +1,6 @@
-package com.pc.decorator.demo;
+package com.pc.decorator.demo.beverage;
+
+import com.pc.decorator.demo.Beverage;
 
 /**
  * @author dx

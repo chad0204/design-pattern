@@ -1,4 +1,4 @@
-package com.pc.decorator.demo;
+package com.pc.decorator.demo.sizedecorator;
 
 /**
  * @author dx

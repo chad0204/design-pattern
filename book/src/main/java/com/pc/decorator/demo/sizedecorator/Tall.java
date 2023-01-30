@@ -1,4 +1,6 @@
-package com.pc.decorator.demo;
+package com.pc.decorator.demo.sizedecorator;
+
+import com.pc.decorator.demo.Beverage;
 
 /**
  * @author dx
@@ -8,7 +10,6 @@ package com.pc.decorator.demo;
  */
 public class Tall extends SizeDecorator {
 
-    private Beverage beverage;
 
     public Tall(Beverage beverage) {
         this.beverage = beverage;

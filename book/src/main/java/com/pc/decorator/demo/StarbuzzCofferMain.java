@@ -1,5 +1,11 @@
 package com.pc.decorator.demo;
 
+import com.pc.decorator.demo.beverage.Espresso;
+import com.pc.decorator.demo.beverage.HouseBlend;
+import com.pc.decorator.demo.condimentdecorator.Mocha;
+import com.pc.decorator.demo.condimentdecorator.Whip;
+import com.pc.decorator.demo.sizedecorator.Tall;
+
 /**
  * @author dx
  * @className StatbuzzCofferMain
@@ -16,7 +22,7 @@ package com.pc.decorator.demo;
  *      生成一个代理对象，来控制对实际对象的访问，有时候代理和被代理是不需要实现相同接口的，如远程代理，动态代理。
  *
  */
-public class StatbuzzCofferMain {
+public class StarbuzzCofferMain {
 
     public static void main(String[] args) {
 

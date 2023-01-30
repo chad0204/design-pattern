@@ -8,7 +8,7 @@ package com.pc.decorator.demo;
  */
 public abstract class Beverage {
 
-    String description = "UnKnown Beverage";
+    protected String description = "UnKnown Beverage";
 
     public String getDescription() {
         return description;
