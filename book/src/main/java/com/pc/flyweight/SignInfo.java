@@ -10,17 +10,13 @@ import lombok.Data;
 @Data
 public class SignInfo {
 
-    private Long id;
+    private final String location;
 
-    private String location;
+    private final String subject;
 
-    private String subject;
 
-    private String postAddress;
-
-    private String signName;
-
-    public void operation() {
-        System.out.println(signName + "进入" + location + "进行" + subject + "考试");
+    public SignInfo(String location, String subject) {
+        this.location = location;
+        this.subject = subject;
     }
 }
