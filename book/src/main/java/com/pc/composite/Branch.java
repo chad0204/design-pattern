@@ -37,10 +37,16 @@ public class Branch implements IBranch {
 
     @Override
     public String getInfo() {
-        return "Branch{" +
-                "name='" + name + '\'' +
-                ", position='" + position + '\'' +
-                ", salary=" + salary +
-                '}';
+        StringBuilder info = new StringBuilder("");
+        info.append("Branch{" + "name='")
+                .append(name).append('\'')
+                .append(", position='")
+                .append(position).append('\'')
+                .append(", salary=").append(salary)
+                .append('}').append('\'').append("\n");
+        for (ICrop crop : childes) {
+            info.append(crop.getInfo()).append("\n");
+        }
+        return info.toString();
     }
 }

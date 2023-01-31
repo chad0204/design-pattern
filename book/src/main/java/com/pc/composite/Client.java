@@ -11,9 +11,9 @@ import java.util.List;
 public class Client {
     public static void main(String[] args) {
         IBranch ceo = compositeCropTree();
-//        System.out.println(ceo.getInfo());
+        System.out.println(ceo.getInfo());
 
-        System.out.println(getTreeInfo(ceo));
+//        System.out.println(getTreeInfo(ceo));
     }
 
     private static IBranch compositeCropTree() {
