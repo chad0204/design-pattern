@@ -8,7 +8,7 @@ import lombok.Data;
  * @since 2022/8/9 10:53
  */
 @Data
-public class SignInfo {
+public class SignInfo extends FlyWeight {
 
     private final String location;
 

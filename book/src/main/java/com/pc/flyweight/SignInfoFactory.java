@@ -21,13 +21,17 @@ public class SignInfoFactory {
         pool.put(Location.MIDDLE_SCHOOL_2.name() + "@" + Subject.MATH.name(), new SignInfo(Location.MIDDLE_SCHOOL_2.name(), Subject.MATH.name()));
     }
 
-    public static SignInfo getSignInfo(String key) {
+    public static FlyWeight getSignInfo(String key) {
+        SignInfo signInfo;
         if (pool.containsKey(key)) {
-            return pool.get(key);
+            signInfo = pool.get(key);
+        } else {
+            signInfo = new SignInfo(Location.HIGH_SCHOOL_1.name(),  Subject.ENGLISH.name());
+            pool.put(key, signInfo);
         }
-        SignInfo signInfo = new SignInfo(Location.HIGH_SCHOOL_1.name(),  Subject.ENGLISH.name());
-        pool.put(key, signInfo);
-        return signInfo;
+        Student student = new Student();
+        student.setSignInfo(signInfo);
+        return student;
     }
 
     //科目

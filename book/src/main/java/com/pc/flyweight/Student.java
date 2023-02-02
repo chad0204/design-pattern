@@ -10,21 +10,15 @@ import lombok.Data;
  * @since 2023/1/31 18:36
  */
 @Data
-public class Student {
-    private Long id;
-
-    private String postAddress;
-
-    private String signName;
+public class Student extends FlyWeight {
 
     /**
      * 内部状态
      */
     private SignInfo signInfo;
 
-
-    public void operation() {
-        System.out.println(signName + "进入" + signInfo.getLocation() + "进行" + signInfo.getSubject() + "考试");
+    public String operation() {
+        return super.operation() + "进入" + signInfo.getLocation() + "进行" + signInfo.getSubject() + "考试";
     }
 
 }
