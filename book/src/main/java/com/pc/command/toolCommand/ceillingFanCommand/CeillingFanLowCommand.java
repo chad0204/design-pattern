@@ -1,5 +1,6 @@
-package com.pc.command.command;
+package com.pc.command.toolCommand.ceillingFanCommand;
 
+import com.pc.command.toolCommand.Command;
 import com.pc.command.tool.CeilingFan;
 
 /**
@@ -8,19 +9,19 @@ import com.pc.command.tool.CeilingFan;
  * @description 风扇调高命令
  * @date 2019-08-11 17:34
  */
-public class CeillingFanHighCommand implements Command {
+public class CeillingFanLowCommand implements Command {
 
     CeilingFan ceillingFan;
     int prevSpeed;//用于记录上一次状态
 
-    public CeillingFanHighCommand(CeilingFan ceillingFan) {
+    public CeillingFanLowCommand(CeilingFan ceillingFan) {
         this.ceillingFan = ceillingFan;
     }
 
     @Override
     public void execute() {
         prevSpeed = ceillingFan.getSpeed();
-        ceillingFan.high();
+        ceillingFan.low();
     }
 
     @Override

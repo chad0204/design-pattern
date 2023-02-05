@@ -1,7 +1,7 @@
 package com.pc.command.control;
 
-import com.pc.command.command.Command;
-import com.pc.command.command.NoCommand;
+import com.pc.command.toolCommand.Command;
+import com.pc.command.toolCommand.NoCommand;
 
 /**
  * @author dx

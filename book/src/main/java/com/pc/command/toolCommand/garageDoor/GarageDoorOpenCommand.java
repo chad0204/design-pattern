@@ -1,5 +1,6 @@
-package com.pc.command.command;
+package com.pc.command.toolCommand.garageDoor;
 
+import com.pc.command.toolCommand.Command;
 import com.pc.command.tool.Garage;
 
 /**

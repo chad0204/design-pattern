@@ -1,11 +1,19 @@
 package com.pc.command;
 
-import com.pc.command.command.*;
+import com.pc.command.toolCommand.ceillingFanCommand.CeillingFanLowCommand;
+import com.pc.command.toolCommand.ceillingFanCommand.CeillingFanMediumCommand;
+import com.pc.command.toolCommand.ceillingFanCommand.CeillingFanOffCommand;
+import com.pc.command.toolCommand.garageDoor.GarageDoorCloseCommand;
+import com.pc.command.toolCommand.garageDoor.GarageDoorOpenCommand;
+import com.pc.command.toolCommand.ceillingFanCommand.CeillingFanHighCommand;
+import com.pc.command.toolCommand.light.LightOffCommand;
+import com.pc.command.toolCommand.light.LightOnCommand;
 import com.pc.command.control.RemoteControl;
 import com.pc.command.control.SimpleRemoteControl;
 import com.pc.command.tool.CeilingFan;
 import com.pc.command.tool.Garage;
 import com.pc.command.tool.Light;
+
 
 /**
  * @author dx
@@ -55,15 +63,24 @@ public class Main {
 
 
         //---------------------换挡-----------------------------
-        CeilingFan ceilingFan = new CeilingFan(1);//初始风速
-        //TODO 暂未提供中速和低速档
+        CeilingFan ceilingFan = new CeilingFan(0);//初始风速关闭
+//        //TODO 暂未提供中速和低速档
         CeillingFanHighCommand ceillingFanHighCommand = new CeillingFanHighCommand(ceilingFan);//强风挡
+        CeillingFanMediumCommand ceillingFanMediumCommand = new CeillingFanMediumCommand(ceilingFan);//中风挡
+        CeillingFanLowCommand ceillingFanLowCommand = new CeillingFanLowCommand(ceilingFan);//弱风档
         CeillingFanOffCommand ceillingFanOffCommand = new CeillingFanOffCommand(ceilingFan);//关闭挡
+
         control.setCommand(2,ceillingFanHighCommand, ceillingFanOffCommand);
+        control.setCommand(3,ceillingFanMediumCommand, ceillingFanOffCommand);
+        control.setCommand(4,ceillingFanLowCommand, ceillingFanOffCommand);
 
-
+        control.onButtonWasPushed(4);//弱风
+        control.onButtonWasPushed(3);//中风
         control.onButtonWasPushed(2);//强风
+
+
         control.undoButtonWasPushed();//撤销到按钮2的命令的前一个风速
+
 
 
     }

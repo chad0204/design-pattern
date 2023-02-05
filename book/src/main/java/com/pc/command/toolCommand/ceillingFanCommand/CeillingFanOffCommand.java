@@ -1,5 +1,6 @@
-package com.pc.command.command;
+package com.pc.command.toolCommand.ceillingFanCommand;
 
+import com.pc.command.toolCommand.Command;
 import com.pc.command.tool.CeilingFan;
 
 /**
@@ -23,6 +24,9 @@ public class CeillingFanOffCommand implements Command {
         ceillingFan.off();
     }
 
+    /**
+     * 用状态模式改造一下？
+     */
     @Override
     public void undo() {
         switch (prevSpeed) {

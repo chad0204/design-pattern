@@ -1,4 +1,4 @@
-package com.pc.command.command;
+package com.pc.command.toolCommand;
 
 /**
  * @author dx
