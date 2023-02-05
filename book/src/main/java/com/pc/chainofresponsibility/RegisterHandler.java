@@ -13,6 +13,10 @@ public abstract class RegisterHandler {
         this.next = next;
     }
 
+    /**
+     * final
+     * @param user
+     */
     public final void register(User user) {
         if (isMatch(user.getType())) {
             this.doRegister(user);
