@@ -4,8 +4,8 @@ package com.pc.chainofresponsibility;
  *
  *  如何构建责任链
  *
- *  1. 统一维护责任链，并维护处理的索引。外部控制
- *  2. 每个节点维护自己下一个节点，这是和composite模式结合
+ *  1. 外部控制，统一维护责任链，并维护处理的索引。
+ *  2. 内部控制，每个节点维护自己下一个节点，这是和composite模式结合。
  *
  * @author pengchao
  * @since 2022/8/9 15:25
