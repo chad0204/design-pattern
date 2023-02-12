@@ -22,14 +22,15 @@ public class Test {
         Father father = new Father();
 
 
-        father = childA;
-        childA = (ChildA) father;
+        father = childA;//儿子可以赋值给爹
+        childA = (ChildA) father;//爹不可以赋值给儿子
 
 
+        getC(childA);//向
         //不能把爹赋值给儿子
-        getC(childA);
         getC((ChildA) father);
 
+        //可以把儿子赋值给爹
         getF(childA);
         getF(father);
 
