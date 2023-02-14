@@ -4,6 +4,10 @@ import java.util.*;
 
 /**
  * 里氏替换
+ * <p>
+ * 不会出现因为多态（子类实现不同）产生bug
+ * 代码更具扩展性, 父类可以被子类安全替换。（反之是向下转型, 本身就有危险）
+ * <p>
  *
  * @author pengchao
  * @since 2023/2/14 17:00
@@ -16,7 +20,7 @@ public class TestLSP {
     }
 
     /**
-     * 验证子类参数必须比父类更宽松
+     * 规则三：验证子类参数必须比父类更宽松
      */
     public static void validateArgs() {
         Map<String, String> map = new HashMap<>();
@@ -36,18 +40,26 @@ public class TestLSP {
     }
 
     /**
-     * 验证子类返回值必须必父类更严格
+     * 规则四：验证子类返回值必须必父类更严格
+     * java没有这条, 因为从语言层面约束了
+     * 1. 重写, 子类返回类型必须比父类小, 否则编译报错
+     * 2. 重载, 前提是满足"规则三：参数比父类大", 此种情况下重载都会调用到父类方法
+     *
      */
     public static void validateReturn() {
 
-        List<String> list = new ArrayList<>();
-
         BaseType baseType = new BaseType();
-//        SubTypeA baseType = new SubTypeA();
-//        SubTypeB baseType = new SubTypeB();
-
-
         HashMap<String, String> hashMap = baseType.getMap(new ArrayList<>());
+        Map<String, String> map = baseType.getMap(new ArrayList<>());
+
+        SubTypeA subTypeA = new SubTypeA();
+        HashMap<String, String> hashMap1 = subTypeA.getMap(new ArrayList<>());
+        Map<String, String> map1 = subTypeA.getMap(new ArrayList<>());
+
+
+        SubTypeB subTypeB = new SubTypeB();
+        HashMap<String, String> hashMap2 = subTypeB.getMap(new ArrayList<>());
+        Map<String, String> map2 = subTypeB.getMap(new ArrayList<>());
 
     }
 
@@ -65,7 +77,6 @@ public class TestLSP {
     }
 
 }
-
 class BaseType {
     public void doSomething(HashMap<String, String> hashMap) {
         System.out.println("BaseType do something!");
@@ -82,7 +93,7 @@ class SubTypeA extends BaseType {
         System.out.println("SubTypeA Type do something!");
     }
 
-    public LinkedHashMap<String, String> getMap(ArrayList<String> list) {
+    public LinkedHashMap<String, String> getMap(List<String> list) {
         System.out.println("SubTypeA do getMap!");
         return new LinkedHashMap<>();
     }
@@ -95,7 +106,7 @@ class SubTypeB extends BaseType {
     }
 
     /**
-     * 重写返回类型不能比父类大, 所以不考虑重写的情况
+     * 重写返回类型不能比父类大(编译错误), 所以不考虑重写的情况
      * 参数不同就是重载, 参数相同就是重写, 和返回值无关
      * @return
      */
@@ -104,7 +115,7 @@ class SubTypeB extends BaseType {
 //        return new HashMap<>();
 //    }
 
-    public Map<String, String> getMap(ArrayList<String> list) {
+    public Map<String, String> getMap(List<String> list) {
         System.out.println("SubTypeB do getMap!");
         return new HashMap<>();
     }
