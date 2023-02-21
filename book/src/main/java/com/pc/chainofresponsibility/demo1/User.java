@@ -1,4 +1,4 @@
-package com.pc.chainofresponsibility;
+package com.pc.chainofresponsibility.demo1;
 
 import lombok.Data;
 
