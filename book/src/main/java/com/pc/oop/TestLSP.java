@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 里氏替换
  * <p>
- * 不会出现因为多态（子类实现不同）产生bug
+ * 不会出现因为多态（子类实现不同）产生bug。父类的实现方法, 子类要保证行为一致, 不能重写, 重载也不能替换父类
  * 代码更具扩展性, 父类可以被子类安全替换。（反之是向下转型, 本身就有危险）
  * <p>
  *
@@ -15,8 +15,8 @@ import java.util.*;
 public class TestLSP {
 
     public static void main(String[] args) {
-//        validateArgs();
-        validateReturn();
+        validateArgs();
+//        validateReturn();
     }
 
     /**
@@ -27,14 +27,34 @@ public class TestLSP {
         HashMap<String, String> hashMap = new HashMap<>();
         LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<>();
 
-//        BaseType baseType = new BaseType();
-//        SubTypeA baseType = new SubTypeA();//SubTypeA替换BaseType
-        SubTypeB baseType = new SubTypeB();//SubTypeB替换BaseType
-//        子类比父类参数类型宽松的重载方法, 父类调用参数向下转型需要强转（也就是父类不该这样调用）。所以当baseType替换成SubTypeA后, 也没有问题
-        baseType.doSomething((HashMap<String, String>) map);
+
+        System.out.println("父类执行: ");
+
+        BaseType baseType = new BaseType();
+        //传参数类型比父类大的情况需要强转, 本身就是危险的, 不考虑这种情况。（所以不怕子类入参比父类大）
+//        baseType.doSomething((HashMap<String, String>) map);
+        //传参类型和父类一样
         baseType.doSomething(hashMap);
-        //子类比父类参数类型严格的重载方法, 当入参正好是子类的参数类型时, 会调用到子类
+        //传参类型比父类小
         baseType.doSomething(linkedHashMap);
+
+        System.out.println("子类形参比父类大: ");
+
+        //1. 用形参比父类大的取代父类
+        SubTypeA baseTypeA = new SubTypeA();
+//        baseTypeA.doSomething(map);// error, 很具有迷惑性, 可惜父类不会这样调用, 需要强转, 如果这里也强转那么调用的还是父类
+        baseTypeA.doSomething(hashMap);//ok
+        baseTypeA.doSomething(linkedHashMap);//ok
+
+
+        System.out.println("子类形参比父类小: ");
+
+        //2. 用形参比父类小的取代父类
+        SubTypeB baseTypeB = new SubTypeB();
+        baseTypeB.doSomething((HashMap<String, String>) map);//ok
+        baseTypeB.doSomething(hashMap);//ok
+        baseTypeB.doSomething(linkedHashMap);//error 参数和子类一样, 调用到子类的重载方法
+
 
 //        invoke(baseType);//这种将子类赋值给父类都可以通过
     }
@@ -43,7 +63,7 @@ public class TestLSP {
      * 规则四：验证子类返回值必须必父类更严格
      * java没有这条, 因为从语言层面约束了
      * 1. 重写, 子类返回类型必须比父类小, 否则编译报错
-     * 2. 重载, 前提是满足"规则三：参数比父类大", 此种情况下重载都会调用到父类方法
+     * 2. 重载, 前提是满足"规则三：参数比父类大"（不然就是重写了）, 此种情况下重载都会调用到父类方法
      *
      */
     public static void validateReturn() {
