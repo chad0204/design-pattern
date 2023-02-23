@@ -18,18 +18,18 @@ public class Client {
 
     private static IBranch compositeCropTree() {
         IBranch ceo = new Branch("库克", "ceo", 10000000d);
+
         IBranch techLeader = new Branch("雷军", "技术leader", 1000000d);
         IBranch bizLeader = new Branch("马云", "业务leader", 1000000d);
-        ILeaf developer1 = new Leaf("马斯克", "大头兵", 100000d);
-        ILeaf developer2 = new Leaf("扎克伯格", "大头兵", 100000d);
-        ILeaf pm = new Leaf("张小龙", "产品经理", 100000d);
-
         ceo.addCrop(techLeader);
         ceo.addCrop(bizLeader);
 
+        ILeaf developer1 = new Leaf("马斯克", "大头兵", 100000d);
+        ILeaf developer2 = new Leaf("扎克伯格", "大头兵", 100000d);
         techLeader.addCrop(developer1);
         techLeader.addCrop(developer2);
 
+        ILeaf pm = new Leaf("张小龙", "产品经理", 100000d);
         bizLeader.addCrop(pm);
 
         return ceo;

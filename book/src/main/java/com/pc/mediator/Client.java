@@ -29,8 +29,7 @@ public class Client {
 
         AbstractMediator mediator = new Mediator();
         Purchase purchase = new Purchase(mediator);
-        Sale sale = new Sale(mediator);
-        Stock stock = new Stock(mediator);
+
 
         purchase.buy(10);
 
