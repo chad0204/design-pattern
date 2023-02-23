@@ -27,9 +27,7 @@ public class TestLSP {
         HashMap<String, String> hashMap = new HashMap<>();
         LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<>();
 
-
         System.out.println("父类执行: ");
-
         BaseType baseType = new BaseType();
         //传参数类型比父类大的情况需要强转, 本身就是危险的, 不考虑这种情况。（所以不怕子类入参比父类大）
 //        baseType.doSomething((HashMap<String, String>) map);
@@ -38,18 +36,13 @@ public class TestLSP {
         //传参类型比父类小
         baseType.doSomething(linkedHashMap);
 
-        System.out.println("子类形参比父类大: ");
-
-        //1. 用形参比父类大的取代父类
+        System.out.println("1. 用形参比父类大的取代父类: ");
         SubTypeA baseTypeA = new SubTypeA();
-//        baseTypeA.doSomething(map);// error, 很具有迷惑性, 可惜父类不会这样调用, 需要强转, 如果这里也强转那么调用的还是父类
+//        baseTypeA.doSomething(map);// error, 很具有迷惑性, 如果父类用Map作为参数需要强转, 不能直接调, 强转那么调用的还是父类
         baseTypeA.doSomething(hashMap);//ok
         baseTypeA.doSomething(linkedHashMap);//ok
 
-
-        System.out.println("子类形参比父类小: ");
-
-        //2. 用形参比父类小的取代父类
+        System.out.println("2. 用形参比父类小的取代父类: ");
         SubTypeB baseTypeB = new SubTypeB();
         baseTypeB.doSomething((HashMap<String, String>) map);//ok
         baseTypeB.doSomething(hashMap);//ok
